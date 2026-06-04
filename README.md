@@ -84,3 +84,5 @@ npm run dev
 
 ## 👨‍💻 Author
 Shalini Jha
+
+backend - https://eventora-backend-clp8.onrender.com
