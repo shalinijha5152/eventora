@@ -86,3 +86,4 @@ npm run dev
 Shalini Jha
 
 backend - https://eventora-backend-clp8.onrender.com
+frontend - https://eventora-frontend-zzzv.onrender.com
