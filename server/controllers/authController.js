@@ -17,11 +17,14 @@ exports.register = async (req, res) => {
     try {
         console.log("REQUEST BODY:", req.body); // Debug
 
-        const { name, email, password } = req.body;
+        const { name, email, password, role } = req.body;
 
         if (!name || !email || !password) {
             return res.status(400).json({ message: 'All fields are required' });
         }
+        
+        const allowedRoles = ["user", "organizer"];
+        const finalRole = allowedRoles.includes(role) ? role : "user";
 
         let user = await User.findOne({ email });
         if (user) return res.status(400).json({ message: 'User already exists' });
@@ -33,7 +36,7 @@ exports.register = async (req, res) => {
             name,
             email,
             password: hashedPassword,
-            role: 'user',
+            role: finalRole,
             isVerified: false
         });
 
