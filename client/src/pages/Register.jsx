@@ -6,7 +6,6 @@ const Register = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [role, setRole] = useState('user');
     const [otp, setOtp] = useState('');
     const [showOTP, setShowOTP] = useState(false);
     const [error, setError] = useState('');
@@ -21,7 +20,7 @@ const Register = () => {
         setError('');
         try {
             if (!showOTP) {
-                await register(name, email, password, role);
+                await register(name, email, password);
                 setShowOTP(true);
                 setError('');
             } else {
@@ -77,17 +76,6 @@ const Register = () => {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
-                        <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">Register As</label>
-                        <select
-                            className="w-full px-4 py-3 rounded-lg border border-gray-300"
-                            value={role}
-                            onChange={(e) => setRole(e.target.value)}
-                        >
-                            <option value="user">User</option>
-                            <option value="organizer">Organizer</option>
-                        </select>
-                    </div>
                     </>
                 ) : (
                     <div>
