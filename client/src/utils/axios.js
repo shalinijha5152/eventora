@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: "https://eventora-backend-clp8.onrender.com", // match your backend port
+    baseURL: 'https://eventora-backend-clp8.onrender.com', // match your backend port
     headers: {
         'Content-Type': 'application/json',
     },
